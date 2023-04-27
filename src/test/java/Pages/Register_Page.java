@@ -188,6 +188,12 @@ public class Register_Page {
 
     }
 
+    public WebElement verifyEmailAddressAlreadyExist()
+    {
+        return  driver.findElement(By.xpath("//*[@id=\"form\"]/div/div/div[3]/div/form/p"));
+
+    }
+
 
 
 

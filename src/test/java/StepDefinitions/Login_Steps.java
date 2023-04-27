@@ -42,4 +42,16 @@ public class Login_Steps {
     public void verifyErrorYourEmailOrPasswordIsIncorrectIsVisible() {
         Boolean Verify = Login.verifyLoginError().isDisplayed();
         Assert.assertTrue(Verify);    }
+
+    @And("Click Logout button")
+    public void clickLogoutButton() throws InterruptedException {
+        Login.getLogoutButton().click();
+        Thread.sleep(3000);
+    }
+
+    @Then("Verify that user is navigated to login page")
+    public void verifyThatUserIsNavigatedToLoginPage() {
+
+        Assert.assertEquals("https://automationexercise.com/login" , Steps.GlobalDriver.getCurrentUrl());
+    }
 }

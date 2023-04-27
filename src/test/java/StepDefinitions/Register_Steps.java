@@ -20,20 +20,15 @@ public class Register_Steps {
         Boolean Verify = Register.VerifyNewUserSignup().isDisplayed();
         System.out.println(Verify);
         Assert.assertTrue(Verify,"New User Signup is visible");
-        Thread.sleep(1000);
-
-
-    }
-    //*[@id="form"]/div/div/div/div[1]/h2/b
-    @And("Enter name and email address and Click 'Signup' button")
-    public void SignUp() throws InterruptedException {
-        Register.SignUp("abd", "abcd1811278@gmail.com");
-        Thread.sleep(1000);
-        Boolean Verify = Register.CheckSignUp().isDisplayed();
-        Assert.assertTrue(Verify,"New User Signup is visible");
         Thread.sleep(2000);
 
 
+    }
+
+    @And("Enter {string} and {string} and Click Signup button")
+    public void enterAndAndClickSignupButton(String arg0, String arg1) throws InterruptedException {
+        Register.SignUp(arg0, arg1);
+        Thread.sleep(2000);
     }
     @And("Fill Account Information")
     public void FillAccountInfo() throws InterruptedException {
@@ -72,6 +67,15 @@ public class Register_Steps {
         Thread.sleep(1000);
         Register.getContinueButton().click();
         Thread.sleep(3000);
+
+    }
+
+
+    @Then("Verify error Email Address already exist is visible")
+    public void verifyErrorEmailAddressAlreadyExistIsVisible() {
+        Boolean Verify = Register.verifyEmailAddressAlreadyExist().isDisplayed();
+        Assert.assertTrue(Verify);
+
 
     }
 }

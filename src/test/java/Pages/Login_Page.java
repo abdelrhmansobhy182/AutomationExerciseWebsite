@@ -53,5 +53,10 @@ public class Login_Page {
         return  driver.findElement(By.xpath("//*[@id=\"form\"]/div/div/div[1]/div/form/p"));
 
     }
+    public WebElement getLogoutButton()
+    {
+        return  driver.findElement(By.xpath("//*[@id=\"header\"]/div/div/div/div[2]/div/ul/li[4]/a"));
+
+    }
 
 }
