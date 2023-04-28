@@ -10,13 +10,13 @@ import org.testng.Assert;
 
 public class Login_Steps {
 
-    Login_Page Login;
+    Login_Page Login = new Login_Page(Steps.GlobalDriver);
 
 
 
     @Then("Verify Login To Your Account is Visible")
     public void VerifyButton() throws InterruptedException {
-        Login = new Login_Page(Steps.GlobalDriver);
+
         Boolean Verify = Login.VerifyLoginToYourAccount().isDisplayed();
         Assert.assertTrue(Verify);
         Thread.sleep(1000);

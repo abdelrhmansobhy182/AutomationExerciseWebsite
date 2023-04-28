@@ -4,7 +4,16 @@ Feature: User should be Register
     When Click on Signup Login button
     Then Verify 'New User Signup!' is visible
 
-Scenario: Register User with new email
+  Scenario: Register User with new email
+    And Enter "abdelrhman" and "abd123@gmail.com" and Click Signup button
+    And Fill Account Information
+    And Fill Address Information
+    Then Verify that ACCOUNT CREATED
+    And Click Continue button
+    Then Verify that Logged in as username is visible
+
+
+Scenario: Register User with new email and delete
   And Enter "abdelrhman" and "abdo123@gmail.com" and Click Signup button
   And Fill Account Information
   And Fill Address Information

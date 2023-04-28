@@ -20,10 +20,7 @@ public class Steps {
     public void OpenBrowser() throws InterruptedException {
         String ChromPath = System.getProperty("user.dir") + "\\src\\main\\resources\\chromedriver.exe";
         System.setProperty("webdriver.chrome.driver", ChromPath);
-
-        ChromeOptions options = new ChromeOptions();
-        options.setExperimentalOption("excludeSwitches", Arrays.asList("disable-popup-blocking"));
-        GlobalDriver= new ChromeDriver(options);
+        GlobalDriver= new ChromeDriver();
         GlobalDriver.navigate().to("https://automationexercise.com/");
         GlobalDriver.manage().window().maximize();
         Thread.sleep(1000);
